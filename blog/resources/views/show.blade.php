@@ -16,7 +16,7 @@
         <form action="/posts/{{ $post->id }}" id="form_delete" method="post" style="display:inline">
             @csrf
             @method('delete')
-            <p class='delete'><span onclick='return deletePost(this);'><button type="submit">[削除]</button></span></p>
+            <p class='delete'><span onclick="return deletePost(this);"><button type="submit">[削除]</button></span></p>
             
         </form>
         <div class="content">
@@ -32,7 +32,7 @@
             function deletePost(e){
                 'use strict';
                 if (confirm("削除すると復元できません。\n本当に削除しますか？")){
-                    document.getElementById('from_delete').submit();
+                    document.getElementById('form_delete').submit();
                 }
             }
         </script>
